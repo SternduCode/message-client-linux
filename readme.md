@@ -1,3 +1,6 @@
+## This is a fork for Linux for the Windows version look at [this repository](https://github.com/felixcrafter54/message-client).
+
+
 # Message Client
 
 The Message Client is a Windows application that provides a user-friendly graphical interface for receiving and displaying messages via Windows toast notifications and console logs. This client also serves as an HTTP server, allowing users to send messages, execute commands, and press hotkeys remotely.
