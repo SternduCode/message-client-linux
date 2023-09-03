@@ -58,11 +58,11 @@ isshown = False
 config_loaded = load_config()
 
 exe_path = sys.argv[0]
-autostart_folder = os.path.join(os.getenv('APPDATA'),'Microsoft\Windows\Start Menu\Programs\Startup')
+autostart_folder = os.path.join(os.getenv('HOME'),'.config/autostart')
 
 def autostart(Flag):
     data = load_config()
-    shortcut_name = "MessageClient.lnk"
+    shortcut_name = "MessageClient.desktop"
     shortcut_path = os.path.join(autostart_folder, shortcut_name)
     if Flag:
         data['autostart'] = True
@@ -188,7 +188,7 @@ def create_gui():
     def show_window(icon):
         global isshown
         icon.stop()
-        window.after(0,window.deiconify())
+        window.after(0,lambda: window.deiconify())
         # delete Textbox and show last messages
         console_output.delete(1.0, tk.END)
         console_output.insert(tk.END, "\n".join(last_messages))
